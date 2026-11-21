@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: swift --version
+      - name: Build (release, warnings shown)
+        run: swift build -c release 2>&1 | tee build.log; ! grep -E "warning:|error:" build.log
+      - name: Test
+        run: swift test

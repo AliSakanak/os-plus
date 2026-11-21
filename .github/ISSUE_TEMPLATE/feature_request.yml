@@ -1,0 +1,17 @@
+name: Feature idea
+description: Suggest an improvement or a new tool
+labels: [enhancement]
+body:
+  - type: textarea
+    attributes:
+      label: What annoyance would this fix?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: How do you imagine it working?
+  - type: checkboxes
+    attributes:
+      label: Fits the principles
+      options:
+        - label: Works locally (no network), never deletes, and acts only when you click

@@ -1,0 +1,27 @@
+name: Bug report
+description: Something isn't working
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Which tab?
+      options: [Health, Ports, Text, Downloads, Find, Sound, Menu bar / other]
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: macOS version and Mac model
+      placeholder: macOS 26.1, MacBook Air M3
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Debug output (optional)
+      description: e.g. `--search-cli "query"` or `scripts/sound-selftest.sh list`. Remove anything personal.
+      render: text
